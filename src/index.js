@@ -56,12 +56,3 @@ function clearMarkup() {
   refs.cardContainer.innerHTML = '';
   refs.countryCard.innerHTML = '';
 }
-
-// countries.map(country => {
-//   const allLangs = country.languages.map(lang => lang.name).join(', ');
-//   const langMarkup = `<p><span class="ability-title">Languages:</span> ${allLangs} </p>`;
-//   const markup = countryCardTpl(country);
-
-//   refs.countryCard.insertAdjacentHTML('afterbegin', langMarkup);
-//   refs.countryCard.insertAdjacentHTML('afterbegin', markup);
-// });
