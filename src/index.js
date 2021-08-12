@@ -1,7 +1,7 @@
 import './sass/main.scss';
 import { alert, notice, info, success, error } from '@pnotify/core';
 import debounce from 'lodash.debounce';
-import API from './fetchCountries.js';
+import API from './fetchCountries';
 import countryListTpl from './templates/country-list.hbs';
 import countryCardTpl from './templates/country.hbs';
 
