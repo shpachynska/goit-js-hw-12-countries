@@ -2,6 +2,7 @@ import './sass/main.scss';
 import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/desktop/dist/PNotifyDesktop';
 import '@pnotify/core/dist/BrightTheme.css';
+
 import { alert, notice, info, success, error } from '@pnotify/core';
 import debounce from 'lodash.debounce';
 import API from './fetchCountries';
@@ -35,6 +36,8 @@ function onInput(e) {
             text: 'Too many matches found. Please enter a more specific query!',
             styling: 'brighttheme',
             delay: 3000,
+            animation: 'fade',
+            width: '600px',
           });
         }
       })
@@ -48,6 +51,8 @@ function onFetchError(er) {
     styling: 'brighttheme',
     delay: 3000,
     maxTextHeight: null,
+    animation: 'fade',
+    width: '500px',
   });
 }
 
