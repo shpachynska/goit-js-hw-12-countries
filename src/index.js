@@ -1,4 +1,7 @@
 import './sass/main.scss';
+import '@pnotify/core/dist/PNotify.css';
+import '@pnotify/desktop/dist/PNotifyDesktop';
+import '@pnotify/core/dist/BrightTheme.css';
 import { alert, notice, info, success, error } from '@pnotify/core';
 import debounce from 'lodash.debounce';
 import API from './fetchCountries';
@@ -26,16 +29,24 @@ function onInput(e) {
           renderCountryCard(countries);
         } else if (countries.length > 1 && countries.length <= 10) {
           renderCountryList(countries);
-        } else {
+        } else if (countries.length > 10) {
           const myNotice = notice({
             text: 'Too many matches found. Please enter a more specific query!',
+            styling: 'brighttheme',
+            delay: 3000,
           });
         }
       })
-      .catch(error => {
-        alert('Please enter valid country name');
-      });
+      .catch(onFetchError);
   }
+}
+
+function onFetchError(er) {
+  const myError = error({
+    text: 'There is no such country. Please enter a valid name!',
+    styling: 'brighttheme',
+    delay: 3000,
+  });
 }
 
 function createCountryListMarkup(countries) {
