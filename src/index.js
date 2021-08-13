@@ -31,6 +31,7 @@ function onInput(e) {
           renderCountryList(countries);
         } else if (countries.length > 10) {
           const myNotice = notice({
+            maxTextHeight: null,
             text: 'Too many matches found. Please enter a more specific query!',
             styling: 'brighttheme',
             delay: 3000,
@@ -46,6 +47,7 @@ function onFetchError(er) {
     text: 'There is no such country. Please enter a valid name!',
     styling: 'brighttheme',
     delay: 3000,
+    maxTextHeight: null,
   });
 }
 
